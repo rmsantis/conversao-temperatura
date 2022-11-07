@@ -1,0 +1,17 @@
+version: '3.8'
+##comentario
+
+networks:
+  conver_temp_net:
+    driver: bridge
+
+services:
+  api:
+    image: rmsantis/conversao-temperatura:v5
+    build: 
+      dockerfile: ./Dockerfile
+      context: ./
+    ports: 
+      - 8080:8080
+    networks:
+      - conver_temp_net 
